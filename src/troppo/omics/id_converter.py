@@ -36,7 +36,9 @@ def _get_HGNC() -> str:
     """
     # Download the file from `url` and save it locally under `hgnc_complete_set_[Date]`:
     now = date.today()
-    url = "ftp://ftp.ebi.ac.uk/pub/databases/genenames/new/tsv/hgnc_complete_set.txt"
+    #url = "ftp://ftp.ebi.ac.uk/pub/databases/genenames/new/tsv/hgnc_complete_set.txt"  
+    #ftp gives me error: no longer available, now its on google cloud storage bucket which is the following url
+    url = "storage.googleapis.com/public-download-files/hgnc/tsv/tsv/hgnc_complete_set.txt"
     path = "hgnc_complete_set_" + str(now) + ".tsv"
     file = Path(path)
 
